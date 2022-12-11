@@ -3,26 +3,24 @@ requires = ["setuptools>=61.0", "wheel", "setuptools_git_versioning"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tag_update_helper"
+name = "get_minecraft_server"
 dynamic = ["version"]
 authors = [
-    { name="NTS Cloud Openstack", email="iaas.openstack@bell.ca" },
+    { name="Mathieu Marchand", email="meuch13ps@gmail.com" },
 ]
-description = "package to update tags inside Openstack NFVI R1 projects"
-requires-python = ">=3.7"
+description = "Get the current java minecraft server version and download links"
+requires-python = ">=3.9"
 classifiers = [
    "Programming Language :: Python :: 3",
    "Operating System :: OS Independent",
 ]
 dependencies = [
-    'GitPython',
-    'requests',
-    'python-gitlab>=3.10'
+    'bs4',
+    'requests'
 ]
 
 [project.scripts]
-tag_updater = "tag_version_updater.tag_updater:main"
-send_slack_report = "tag_version_updater.send_slack_report:main"
+get_server = "get_minecraft_server.get_server:main"
 
 [tool.setuptools.packages]
 find = {}
